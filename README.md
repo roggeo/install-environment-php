@@ -1,11 +1,11 @@
 #Ambiente de Desenvolvimento com PHP
 
 [![PHP](images/php.png)](##PHP) 
-[![Apache](images/Apache.png) ![GIT](images/git.png)](##Apache 2.4) 
-[![Composer](images/composer.png)](##Composer) 
-[![PHPUnit](images/phpunit.png)](##PHPUnit) 
-[![Selenium](images/seleniumhq.png)](##Selenium) 
-[![Xdebug](images/xdebug.png)](##Xdebug)
+[![Apache](images/apache.png) ![GIT](images/git.png)](#apache-24) 
+[![Composer](images/composer.png)](#composer) 
+[![PHPUnit](images/phpunit.png)](#phpunit) 
+[![Selenium](images/seleniumhq.png)](#selenium) 
+[![Xdebug](images/xdebug.png)](#xdebug)
 
 
 #Para Windows 7
