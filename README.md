@@ -1,10 +1,18 @@
 #Ambiente de Desenvolvimento com PHP
 
+[![PHP](images/php.png)](##PHP) 
+[![Apache](images/Apache.png) ![GIT](images/git.png)](##Apache 2.4) 
+[![Composer](images/composer.png)](##Composer) 
+[![PHPUnit](images/phpunit.png)](##PHPUnit) 
+[![Selenium](images/seleniumhq.png)](##Selenium) 
+[![Xdebug](images/xdebug.png)](##Xdebug)
+
+
 #Para Windows 7
 
-1. Crie a pasta "C:\www"
-2. Crie a pasta "C:\Apache24"
-3. Crie a pasta "C:\php"
+* Crie a pasta "C:\www"
+* Crie a pasta "C:\Apache24"
+* Crie a pasta "C:\php"
 
 ##PHP
 
@@ -30,14 +38,16 @@ Eles fornecem VC9, VC11 VC14 e compilações do Apache para x86 e x64.
 
 Depois de baixar, desempacote os arquivos em C:\Apache24
 
-###Apache24/conf/httpd.conf
+####httpd.conf
+
+Procure o aquivo  "C:\Apache24\conf\httpd.conf". Adicione as linhas seguintes.
 
 		LoadModule php7_module "C:/php/php7apache2_4.dll"
 		PHPIniDir "C:/php"
 		AddHandler application/x-httpd-php .php
 
 
-1. Nome do servidor
+1) Nome do servidor
 Procure por:
 
 		ServerName www.example.com:80
@@ -46,7 +56,7 @@ Substitua por:
 
 		ServerName localhost:80
 
-2. Diretório Raiz para projetos
+2) Diretório Raiz para projetos
 
 Procure por:
 
@@ -58,7 +68,7 @@ Substitua por:
 		DocumentRoot "c:/www"
 		<Directory "c:/www">
 		
-3.Permitindo que arquivos .htaccess controlem suas directivas
+3) Permitindo que arquivos .htaccess controlem suas directivas
 
 Algo como no arquivo .htaccess:
 
@@ -75,16 +85,16 @@ Substitua por:
 
 		AllowOverride All
 		
-4. Descomentar a linha
+4) Descomentar a linha
 
 		LoadModule rewrite_module modules/mod_rewrite.so
 		
-5. Adicionar se não existir a linha
+5) Adicionar se não existir a linha
 
 		DirectoryIndex index.html index.php
 		
 ##GIT
-
+[Baixar installer GIT](https://git-for-windows.github.io)
 
 ##Composer
 
@@ -102,6 +112,7 @@ Substitua por:
 Adicione o arquivo baixado para "C:\php\ext\php_xdebug.dll"
 
 Adicionar as linhas no arquivo php.ini
+
 		[Zend Modules]
 		zend_extension=php_xdebug.dll
 
