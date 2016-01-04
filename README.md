@@ -1,7 +1,8 @@
 #Ambiente de Desenvolvimento com PHP
 
 [![PHP](images/php.png)](##PHP) 
-[![Apache](images/apache.png) ![GIT](images/git.png)](#apache-24) 
+[![Apache](images/apache.png)](#apache-24)  
+[![GIT](images/git.png)](#git) 
 [![Composer](images/composer.png)](#composer) 
 [![PHPUnit](images/phpunit.png)](#phpunit) 
 [![Selenium](images/seleniumhq.png)](#selenium) 
