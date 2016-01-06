@@ -24,11 +24,22 @@ Como informa o php.net: "With Apache you have to use the Thread Safe (TS) versio
 
 [Baixar PHP](http://windows.php.net/download)
 
-Depois de baixar, desempacote os arquivos em C:\php
-
 Nota: É fundamental que tenha instalado na sua máquina o VisualStudio
 dependendo da versão do seu PHP VC9, VC11 ou VC14.
- 
+
+* Depois de baixar, desempacote os arquivos em "C:\php"
+
+* Tornando o PHP executável pela linha de comando.
+
+Abra o Prompt de Comando como Administrador, e execute o comando:
+		
+		SETX PATH "%PATH%;C:\php;" -m
+
+* Para testar, digite o comando na linha de comando:
+
+```bash
+phpunit --version
+```
 
 ##Apache 2.4
 
@@ -43,9 +54,9 @@ Depois de baixar, desempacote os arquivos em C:\Apache24
 
 ###Arquivo de configurção do Apache
 
-Procure o aquivo  "C:\Apache24\conf\httpd.conf".
+Abre o aquivo  "C:\Apache24\conf\httpd.conf". Agora siga as instruções abaixo para alterá-lo:
 
-####1) Para o Apache ler documentos PHP:
+####1) Para o Apache ler documentos PHP
 
 * PHP 7
 
@@ -60,6 +71,7 @@ Procure o aquivo  "C:\Apache24\conf\httpd.conf".
 		AddHandler application/x-httpd-php .php
 
 ####2) Nome do servidor
+
 Procure por:
 
 		ServerName www.example.com:80
@@ -68,21 +80,21 @@ Altere para (Nome do servidor. Depois procure saber como configurar um virtual h
 
 		ServerName localhost:80
 
-####3) Diretório Raiz para projetos
+####3) Diretório raiz para projetos
 
 Procure por:
 
 		DocumentRoot "c:/Apache24/htdocs"
 		<Directory "c:/Apache24/htdocs">
 		
-Altere por:
+Altere para:
 
 		DocumentRoot "c:/www"
 		<Directory "c:/www">
 		
 ####4) Permitindo que arquivos .htaccess controlem suas directivas
 
-Algo como:
+Coisas como, exemplo:
 
 		RewriteEngine On
 		RewriteCond %{REQUEST_FILENAME} -d
@@ -93,15 +105,15 @@ Então, procure por:
 
 		AllowOverride None
 		
-Alere para:
+Altere para:
 
 		AllowOverride All
 		
-####5) Descomentar a linha
+Agora, descomente a linha:
 
 		LoadModule rewrite_module modules/mod_rewrite.so
 		
-####6) Para ler arquivos index.html e index.html
+####5) Para ler arquivos index.html e index.html
 
 Procure por:
 
@@ -115,23 +127,65 @@ Altere para:
 			DirectoryIndex index.html index.php
 		</IfModule>	
 		
-###Rodar Apache
+###Executando Apache e incluindo na lista de serviços do Windows
 
-Digite o comando no CMD (Prompt de Comando)	:
+Digite o comando no CMD (Prompt de Comando):
 
-	C:\Apache24\bin\httpd.exe -k install
+		C:\Apache24\bin\httpd.exe -k install
+
+####6) Testando Apache
+
+Para ver se funcionou, verifique se o Apache2.4 está na lista de serviços local do Windows.
+
+* Pressione Windows+R
+* Digite, services.msc
+* Procure por Apache2.4
+
+Agora digite no seu Navegador http://localhost.
 
 	
 ##GIT
 [Baixar installer GIT](https://git-for-windows.github.io)
 
+
 ##Composer
+
+No link abaixo procure como instalar no Windows
+
+[Baixar Composer](https://getcomposer.org/download/)
 
 
 ##PHPUnit
 
+[Baixar o arquivo phpunit.phar](http://https://phpunit.de/)
+
+* Adicione o arquivo baixado phpunit.phar, na pasta "C:\phpunit\"
+* Crie um arquivo com a extensão .bat "phpunit.bat"
+* Adicione o código seguinte no arquivo "phpunit.bat":
+	
+		@ECHO OFF
+		SET BIN_TARGET=%~dp0/phpunit.phar
+		php "%BIN_TARGET%" %*
+
+* Tornando o PHPUnit executável pela linha de comando.
+
+Abra o Prompt de Comando como Administrador, e execute o comando:
+		
+		SETX PATH "%PATH%;C:\phpunit;" -m
+
+* Para testar, digite o comando na linha de comando:
+
+```bash
+phpunit --version
+```
 
 ##Selenium
+
+[Baixar Selenium Server](http://docs.seleniumhq.org/download/)
+
+[Testes com PHPUnit e Selenium 2](https://github.com/roggeo/phpunit-selenium-2)
+
+[Exemplos](https://github.com/giorgiosironi/phpunit-selenium/)
 
 
 ##Xdebug
