@@ -133,7 +133,7 @@ Digite o comando no CMD (Prompt de Comando):
 
 		C:\Apache24\bin\httpd.exe -k install
 
-####6) Testando Apache
+###Testando Apache
 
 Para ver se funcionou, verifique se o Apache2.4 está na lista de serviços local do Windows.
 
