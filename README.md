@@ -9,7 +9,7 @@
 [![Xdebug](images/xdebug.png)](#xdebug)
 
 
-#Para Windows 7
+# Para Windows 7
 
 * Crie a pasta "C:\www"
 * Crie a pasta "C:\Apache24"
@@ -17,19 +17,19 @@
 * Crie a pasta "C:\phpunit"
 * Crie a pasta "C:\composer"
 
-##PHP
+## PHP
 
-Escolha a vers„o com "Thread Safe", que j· vem o arquivo para usar com Apache:
+Escolha a vers√£o com "Thread Safe", que j√° vem o arquivo para usar com Apache:
 Como informa o php.net: "With Apache you have to use the Thread Safe (TS) versions of PHP".
 
 [Baixar PHP](http://windows.php.net/download)
 
-Nota: … fundamental que tenha instalado na sua m·quina o VisualStudio
-dependendo da vers„o do seu PHP VC9, VC11 ou VC14.
+Nota: √â fundamental que tenha instalado na sua m√°quina o VisualStudio
+dependendo da vers√£o do seu PHP VC9, VC11 ou VC14.
 
 * Depois de baixar, desempacote os arquivos em "C:\php"
 
-* Tornando o PHP execut·vel pela linha de comando.
+* Tornando o PHP execut√°vel pela linha de comando.
 
 Abra o Prompt de Comando como Administrador, e execute o comando:
 		
@@ -38,25 +38,25 @@ Abra o Prompt de Comando como Administrador, e execute o comando:
 * Para testar, digite o comando na linha de comando:
 
 ```bash
-phpunit --version
+php --version
 ```
 
-##Apache 2.4
+## Apache 2.4
 
 [Baixar Apache 2.4](http://www.apachelounge.com/download)
 
 Dica do php.net:
 
 Por favor use o Apache compilado fornecido pelo [Apache Lounge](http://apachelounge.com).
-Eles fornecem VC9, VC11 VC14 e compilaÁıes do Apache para x86 e x64.
+Eles fornecem VC9, VC11 VC14 e compila√ß√µes do Apache para x86 e x64.
 
 Depois de baixar, desempacote os arquivos em C:\Apache24
 
-###Arquivo de configurÁ„o do Apache
+### Arquivo de configur√ß√£o do Apache
 
-Abre o aquivo  "C:\Apache24\conf\httpd.conf". Agora siga as instruÁıes abaixo para alter·-lo:
+Abre o aquivo  "C:\Apache24\conf\httpd.conf". Agora siga as instru√ß√µes abaixo para alter√°-lo:
 
-####1) Para o Apache ler documentos PHP
+#### 1) Para o Apache ler documentos PHP
 
 * PHP 7
 
@@ -70,7 +70,7 @@ Abre o aquivo  "C:\Apache24\conf\httpd.conf". Agora siga as instruÁıes abaixo pa
 		PHPIniDir "C:/php"
 		AddHandler application/x-httpd-php .php
 
-####2) Nome do servidor
+#### 2) Nome do servidor
 
 Procure por:
 
@@ -80,7 +80,7 @@ Altere para (Nome do servidor. Depois procure saber como configurar um virtual h
 
 		ServerName localhost:80
 
-####3) DiretÛrio raiz para projetos
+#### 3) Diret√≥rio raiz para projetos
 
 Procure por:
 
@@ -92,7 +92,7 @@ Altere para:
 		DocumentRoot "c:/www"
 		<Directory "c:/www">
 		
-####4) Permitindo que arquivos .htaccess controlem suas directivas
+#### 4) Permitindo que arquivos .htaccess controlem suas directivas
 
 Coisas como, exemplo:
 
@@ -101,7 +101,7 @@ Coisas como, exemplo:
 		RewriteRule ^.*$ - [NC,L]
 		RewriteRule ^(.*)$ %{ENV:BASE}index.php [NC,L]
 
-Ent„o, procure por:
+Ent√£o, procure por:
 
 		AllowOverride None
 		
@@ -113,7 +113,7 @@ Agora, descomente a linha:
 
 		LoadModule rewrite_module modules/mod_rewrite.so
 		
-####5) Para ler arquivos index.html e index.html
+#### 5) Para ler arquivos index.html e index.html
 
 Procure por:
 
@@ -127,15 +127,15 @@ Altere para:
 			DirectoryIndex index.html index.php
 		</IfModule>	
 		
-###Executando Apache e incluindo na lista de serviÁos do Windows
+### Executando Apache e incluindo na lista de servi√ßos do Windows
 
-Digite o comando no CMD (Prompt de Comando):
+Digite o comando no CMD (Prompt de Comando) como Administrador:
 
 		C:\Apache24\bin\httpd.exe -k install
 
-###Testando Apache
+### Testando Apache
 
-Para ver se funcionou, verifique se o Apache2.4 est· na lista de serviÁos local do Windows.
+Para ver se funcionou, verifique se o Apache2.4 est√° na lista de servi√ßos local do Windows.
 
 * Pressione Windows+R
 * Digite, services.msc
@@ -148,26 +148,26 @@ Agora digite no seu Navegador http://localhost.
 [Baixar installer GIT](https://git-for-windows.github.io)
 
 
-##Composer
+## Instalar Composer
 
 No link abaixo procure como instalar no Windows
 
 [Baixar Composer](https://getcomposer.org/download/)
 
 
-##PHPUnit
+## PHPUnit
 
 [Baixar o arquivo phpunit.phar](http://https://phpunit.de/)
 
 * Adicione o arquivo baixado phpunit.phar, na pasta "C:\phpunit\"
-* Crie um arquivo com a extens„o .bat "phpunit.bat"
-* Adicione o cÛdigo seguinte no arquivo "phpunit.bat":
+* Crie um arquivo com a extens√£o .bat "phpunit.bat"
+* Adicione o c√≥digo seguinte no arquivo "phpunit.bat":
 	
 		@ECHO OFF
 		SET BIN_TARGET=%~dp0/phpunit.phar
 		php "%BIN_TARGET%" %*
 
-* Tornando o PHPUnit execut·vel pela linha de comando.
+* Tornando o PHPUnit execut√°vel pela linha de comando.
 
 Abra o Prompt de Comando como Administrador, e execute o comando:
 		
@@ -179,7 +179,7 @@ Abra o Prompt de Comando como Administrador, e execute o comando:
 phpunit --version
 ```
 
-##Selenium
+## Selenium
 
 [Baixar Selenium Server](http://docs.seleniumhq.org/download/)
 
@@ -188,7 +188,7 @@ phpunit --version
 [Exemplos](https://github.com/giorgiosironi/phpunit-selenium/)
 
 
-##Xdebug
+## Xdebug
 
 [Baixar Xdebug](http://xdebug.org/download.php)
 
@@ -200,3 +200,4 @@ Adicionar as linhas no arquivo php.ini
 		zend_extension=php_xdebug.dll
 
 
+**Ok tudo pronto**
